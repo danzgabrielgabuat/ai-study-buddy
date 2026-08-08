@@ -6,7 +6,7 @@ if "messages" not in st.session_state:
     st.session_state.messages = []
 
 if "engine" not in st.session_state:
-    st.session_state.engine = "Offline (Ollama)"
+    st.session_state.engine = "Online (Gemini)"
 
 if "api_key" not in st.session_state:
     st.session_state.api_key = ""
