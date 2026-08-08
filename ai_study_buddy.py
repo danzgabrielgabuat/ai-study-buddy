@@ -110,19 +110,22 @@ def query_ollama(system, history):
 
 def query_gemini(system, history, api_key):
     
-    from google import generativeai as genai
+    from google import genai
+    from google.genai import types
     
-    genai.configure(api_key=api_key)
-    model = genai.GenerativeModel(
-        model_name="gemini-3-flash-preview",
-        system_instruction=system
+    client = genai.Client(api_key=api_key)
+
+    chat = client.chats.create(
+    model="gemini-3.6-flash",
+    config=types.GenerateContentConfig(system_instruction=system),
+    history=[
+        types.Content(
+            role=msg["role"] if msg["role"] == "user" else "model",
+            parts=[types.Part.from_text(text=msg["content"])]
+        )
+        for msg in history[:-1]
+    ]
     )
-    # convert history to Gemini format
-    chat = model.start_chat(history=[
-        {"role": msg["role"] if msg["role"] == "user" else "model",
-         "parts": [msg["content"]]}
-        for msg in history[:-1]  # all except last message
-    ])
     reply = chat.send_message(history[-1]["content"])
     return reply.text
     
