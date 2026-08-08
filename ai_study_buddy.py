@@ -151,7 +151,7 @@ def read_files(uploaded_files):
 
 with st.sidebar:
     
-    st.title("AI Study Buddy")
+    st.title("📚 AI Study Buddy")
     
     engine = st.selectbox("Engine", list(ENGINES))
     
