@@ -96,7 +96,7 @@ ai-study-buddy/
 
 ## Author
 
-**Danz Gabriel S. Gabuat**
-BS Mathematics with Specialization in Computer Applications
+**Danz Gabriel S. Gabuat**  
+BS Mathematics with Specialization in Computer Applications  
 Central Luzon State University
 
