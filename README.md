@@ -1,4 +1,4 @@
-# AI Study Buddy 📚
+# 📚 AI Study Buddy
 
 A Streamlit chat app with five purpose-built study modes and a fully offline
 local AI option, built after a conversation at my internship exit conference
